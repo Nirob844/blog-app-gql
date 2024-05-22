@@ -21,11 +21,6 @@ export const typeDefs = `#graphql
         ): AuthPayload
     }
 
-    type AuthPayload {
-        userError: String
-        token: String
-    }
-
     type Post {
         id: ID!
         title: String!
@@ -48,5 +43,20 @@ export const typeDefs = `#graphql
         bio: String!
         createdAt: String!
         user: User!
+    }
+
+    type AuthPayload {
+        userError: String
+        token: String
+    }
+
+    type PostPayload{
+        userError: String
+        post: Post
+    }
+
+    input PostInput {
+        title: String
+        content: String
     }
 `;
