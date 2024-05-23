@@ -19,6 +19,11 @@ export const typeDefs = `#graphql
             email: String!
             password: String!
         ): AuthPayload
+
+        addPost(post: PostInput!): PostPayload,
+        updatePost(postId: ID!, post: PostInput!): PostPayload,
+        deletePost(postId: ID!): PostPayload,
+        publishPost(postId: ID!): PostPayload
     }
 
     type Post {
